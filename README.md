@@ -1,8 +1,10 @@
 # Bold Claim
 
-A Claude skill for finding the **single contested sentence** that drives a product's GTM motion — not a tagline, not a description, a claim a competitor would push back on.
+**Stop writing positioning. Pick a fight.**
 
-Most positioning drafts fail the same way: they describe a category instead of taking a stance inside it. This skill researches the competitive landscape, generates 5–7 claim candidates across six archetypes, scores them against a 25-point sharpness rubric, and produces a messaging doc anchored on the winning claim.
+Positioning isn't a framework, a canvas, or a twenty-page doc. It's one sentence you'll defend in public — a claim a competitor would push back on, that takes a stance about how the world works or should work.
+
+Bold Claim is a Claude skill that researches your category, generates 5–7 claim candidates against a named antagonist, scores them on a 25-point sharpness rubric, and produces a messaging doc anchored on the winning claim. The skill for founders and PMMs who'd rather defend a sentence than fill out a canvas.
 
 ## Install
 
