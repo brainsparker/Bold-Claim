@@ -1,96 +1,130 @@
 ---
 name: bold-claim
-description: Use when the user wants to sharpen a value proposition, positioning statement, tagline, landing-page headline, pitch, or "what we do" sentence. Triggers on phrases like "make this bolder", "tighten my pitch", "what's our UVP", "rewrite this hero copy", "this sounds generic", or when reviewing marketing copy / about pages / pitch decks.
+description: Identify the single bold claim that drives GTM strategy and messaging for a product, feature, or project. Use this skill whenever the user says "bold claim", "find the bold claim", "what's the claim for X", or asks for positioning, GTM narrative, the "one sentence" that defines a product, the "why does this exist," or messaging that will get attention in a crowded market. Also trigger when the user shares a PRD, strategy doc, or project brief and asks how to position it, sell it, pitch it, or what the headline should be. This skill researches the competitive market, generates multiple claim candidates with a sharpness rubric, and produces a final messaging doc anchored on the winning claim.
 ---
 
 # Bold Claim
 
-Help the user replace vague, hedged, or generic positioning with a single sharp claim that is **specific, falsifiable, and uncomfortable to say out loud**.
+## What this skill does
 
-A bold claim is not louder marketing copy. It is a sentence the user would defend in a room of skeptics. Most drafts fail because they describe a category, not a position inside it.
+A bold claim is the single contested sentence that drives a product's entire GTM motion. Not a tagline. Not a description. A claim — something a competitor would push back on, that takes a stance about how the world works or should work, and that forces buyers to either agree or disagree.
 
-## When to use this skill
+This skill takes context about a product, feature, or project, researches the market, and produces the bold claim plus the messaging derivatives that follow from it.
 
-Trigger when the user shares:
-- A value proposition, tagline, or hero headline
-- An "about" paragraph or "what we do" sentence
-- A pitch deck slide (especially slide 1 or the problem/solution slide)
-- A LinkedIn / Twitter bio for a company or product
-- A cold email opening line
-- Any sentence the user describes as "generic", "weak", "fluffy", or "I don't love it"
+Examples of bold claims (for reference):
 
-Do **not** trigger for general copywriting (blog posts, docs, long-form essays). This skill is about a single load-bearing sentence.
+- "The default search layer for the agent stack" (contested: every search vendor wants this)
+- "AI needs a canonical identity layer — DNS for brands" (contested: assumes a missing primitive)
+- "Stripe for X" (contested: asserts category dominance via analogy)
+- "The fastest way to ship production agents" (contested: every framework claims speed)
 
-## The four tests
+Weak examples (do not produce these): "A modern search API for developers", "AI-powered enterprise platform", "Fast, reliable, scalable"
 
-Run any candidate sentence through these tests in order. Reject and rewrite until it passes all four.
+The difference between a bold claim and a description: a bold claim has an antagonist. If no competitor would disagree, it's not bold.
 
-### 1. The Inversion Test
-> Could a competent competitor say the literal opposite and still sound credible?
+## Inputs
 
-If the opposite sounds absurd ("we make slow, expensive software"), the claim is generic — it's just table stakes dressed up. A bold claim has a credible opposite that some competitor actually occupies.
+Accept either:
 
-- ❌ "We help teams ship faster." (Opposite: "We help teams ship slower." Absurd → generic.)
-- ✅ "We replace your QA team with one engineer and a test runner." (Opposite: "We add QA headcount as you scale." Credible → bold.)
+- Loose context: pasted docs, PRD text, Linear/Notion content, or conversation history about the product
+- A pointer: Linear project ID, Notion page URL, file upload
 
-### 2. The Specificity Test
-> Name the noun. Name the number. Name the loser.
+If the pointer is provided, fetch it. If multiple sources are referenced, read them all before proceeding.
 
-Vague claims hide behind abstractions ("teams", "businesses", "workflows"). Bold claims point at someone specific and say what they lose.
-
-- ❌ "Modern data infrastructure for growing companies."
-- ✅ "Series B SaaS companies fire their data engineer within 90 days of installing us."
-
-### 3. The Wince Test
-> Would the founder feel a small wince of fear posting this publicly?
-
-If the sentence is comfortable, it's probably not a claim — it's a description. Bold claims expose the company to being wrong in public. That exposure is the value: it's what makes prospects believe you mean it.
-
-If the user resists a draft because "we can't say that" — that's signal, not failure. Ask what specifically makes them wince, and use that to find the version they *can* defend.
-
-### 4. The Receipts Test
-> What evidence, in one sentence, would back this up?
-
-Every bold claim needs an attached proof point the user can produce on demand: a number, a case study, a demo, a guarantee. If no receipt exists, the claim is bluster. Either find the receipt or weaken the claim until one exists.
+If the context is thin (less than ~200 words of substantive product detail), ask one targeted clarifying question before researching. Specifically ask for: who the user is, what they do today instead, and what the product does differently. Do not proceed without these three.
 
 ## Process
 
-1. **Read the user's current draft.** Don't critique yet.
-2. **Ask one question:** "Who specifically is the worst-fit customer for this — the person who should run away?" The answer reveals the actual position.
-3. **Diagnose which test(s) the draft fails.** Name them out loud. Be specific: don't say "this is vague" — say "this fails the inversion test because [competitor] could say the literal opposite."
-4. **Offer 3 rewrites, not 1.** Range them from "tight" to "uncomfortable to "I-can't-believe-we'd-say-that." Let the user pick their altitude.
-5. **For the chosen version, name the receipt** the user will need to back it up. If they don't have it, flag that as the next step.
+### Step 1: Extract the working hypothesis
 
-## Anti-patterns to call out
+From the input context, write a one-paragraph internal summary covering:
 
-When you see these in a draft, name them:
+- What it is (product/feature/project)
+- Who it's for (specific user, not "developers" or "enterprises")
+- What changes (the behavior shift this creates)
+- Why now (what's true today that wasn't 2 years ago)
 
-- **The category sentence.** "We're a [category] platform for [segment]." Describes a shelf, not a position on it.
-- **The benefit stack.** "Faster, cheaper, and easier." Three adjectives = zero claims.
-- **The "and more".** Anything ending in "and more" is hiding the actual claim.
-- **The empathy opener.** "We know building X is hard." The reader knows. Skip it.
-- **The hedge.** "Helping teams to potentially..." Strip every softener: *helping*, *enabling*, *empowering*, *potentially*, *can*, *may*.
-- **The mirror.** Copy that could appear on three competitors' homepages unchanged. Search the exact phrase — if competitors use it, it's a mirror.
+This is internal — do not show the user yet. It's the substrate for everything else.
 
-## Output format
+### Step 2: Research the market
 
-When delivering rewrites, use this structure:
+Always run web research. Search for:
 
-```
-Current: <their draft>
-Fails: <which test(s), one line each>
+1. **Direct competitors** — who else solves this problem? Pull their headline claims from homepages.
+2. **Adjacent claims** — what is the dominant narrative in this category right now? What are the loudest voices saying?
+3. **Contested terrain** — what claims are competitors avoiding? Sometimes the bold claim is the one no one wants to make.
+4. **Recent shifts** — has anything in the last 6-12 months created new space (a launch, a failure, a category move)?
 
-Option A (tight):       <rewrite>
-Option B (sharper):     <rewrite>
-Option C (uncomfortable): <rewrite>
+Use 4-8 web searches. Quote competitor taglines and homepage hero copy when relevant. Capture the actual words, not paraphrases — the bold claim has to be sharper than the existing landscape, and that requires knowing the landscape verbatim.
 
-Receipt needed: <one sentence — what proof backs this up>
-```
+### Step 3: Generate claim candidates
 
-Keep the whole response under 200 words. The user is sharpening one sentence, not reading an essay.
+Generate 5-7 candidate claims. Do not stop at 3 — the first 2-3 are almost always descriptive. The sharper ones come later. Force yourself past the obvious framings.
 
-## What this skill is not
+Vary the candidates across these archetypes:
 
-- Not a brand voice guide. Don't comment on tone, capitalization, or word choice unless it affects the claim.
-- Not a long-form editor. If the user pastes a whole landing page, ask them to pick the one sentence that has to do the most work.
-- Not a yes-and. The job is to push back. A skill that agrees with every draft has no value.
+- **Category claim:** "X is the new Y" / "the default for Z"
+- **Antagonist claim:** "Most X is broken because Y" / "Stop doing X, start doing Y"
+- **Asymmetric truth claim:** "The thing everyone believes about X is wrong"
+- **New primitive claim:** "X needs a missing layer/protocol/standard for Y"
+- **Inevitability claim:** "X will happen — the only question is who builds it"
+- **Reframe claim:** "X isn't about Y, it's about Z"
+
+Each candidate is one sentence. Maximum 12 words. If it needs a comma and an "and," it's two claims — pick one.
+
+### Step 4: Score each candidate
+
+Score each candidate against this rubric (1-5 each, no half points):
+
+| Dimension | Question |
+|---|---|
+| Contestable | Would a competitor push back on this? If no, score 1. |
+| Specific | Is it about this product, or could it apply to anything in the category? |
+| Falsifiable | Could we be wrong? Is there a future where this claim looks foolish? |
+| Behavior-changing | If a buyer believes it, do they do something different? |
+| Memorable | Could someone repeat it correctly 24 hours later? |
+
+Total each candidate (out of 25). Reject anything below 18. If nothing scores above 18, generate another round — do not present weak claims.
+
+Show the user the top 3 candidates with their scores and a one-line rationale each. Ask them to pick or push back.
+
+### Step 5: Build the messaging doc
+
+Once a claim is selected, produce a short doc with:
+
+**The Claim.** The single sentence, exactly as it should appear.
+
+**The Antagonist.** One sentence naming what we are against. Every bold claim implies an opponent — make it explicit. ("We believe X" requires "as opposed to Y.")
+
+**Why It's True.** Three proof points. These are evidence-based — data, behavior, market shifts, technical reality. Not feature lists.
+
+**Why It Matters Now.** One paragraph on the timing. What's true in 2026 that makes this claim land? Why would it have failed in 2024?
+
+**What Changes If People Believe It.** Two or three sentences on the behavior shift. What does a buyer do differently? What does the market do differently? This is the GTM hook.
+
+**Where This Shows Up.** A short list of artifacts that need to carry the claim: homepage hero, sales pitch opening line, founder podcast soundbite, recruiting copy, etc. Be concrete about where the claim has to win.
+
+**One-Liners.** 3-5 variations of the claim for different surfaces (tweet, sales deck, conference talk title, etc.). Keep them tight.
+
+## Style
+
+Plain declarative prose. No bullets inside the messaging doc body except where the structure calls for them. The doc should read like a memo, not a deck. Argument over description.
+
+The user prefers direct, opinionated writing — match that. If a candidate is weak, say so. If the input context is too thin to find a bold claim, say so and ask for what's missing.
+
+## Anti-patterns to avoid
+
+- **Adjective stacking:** "Fast, secure, scalable" is not a claim. Reject any candidate that's mostly adjectives.
+- **Category-of-one fluff:** "The world's first AI-native X" — no one believes "first" claims and they don't change behavior.
+- **Internal language:** Claims using terms only employees use (architecture names, internal codenames) fail. The claim has to land cold.
+- **Hedged claims:** "We help X do Y better" is not a claim. Cut the hedges.
+- **Feature claims masquerading as positioning:** "The only X with Y feature" is a feature, not a claim. The claim is about what Y means, not that Y exists.
+- **The "everything platform":** If the claim could describe 5 different products, it's not specific enough.
+
+## When the input is a strategy doc vs. a product
+
+If the input is a product or feature, the claim is about what the product asserts.
+
+If the input is a strategy doc or initiative (e.g., a GTM motion, a partnership program, a category bet), the claim is about what the strategy asserts — what truth about the market it's betting on. Adjust the antagonist and proof points to be market-level rather than product-level.
+
+If the input is a company-wide bet, the claim should clear a higher bar — it should be the thing the company is willing to be wrong about publicly. These are rarer and harder. Push the user to confirm that's the scope before proceeding.
