@@ -1,53 +1,60 @@
-# Bold Claim
+# Skills
 
-A Claude skill for finding the **single contested sentence** that drives a product's GTM motion — not a tagline, not a description, a claim a competitor would push back on.
+A collection of [Claude](https://claude.com/claude-code) skills for go-to-market, positioning, and messaging work.
 
-Most positioning drafts fail the same way: they describe a category instead of taking a stance inside it. This skill researches the competitive landscape, generates 5–7 claim candidates across six archetypes, scores them against a 25-point sharpness rubric, and produces a messaging doc anchored on the winning claim.
+Each skill is a focused, composable unit. Use them when you need to sharpen a claim, pressure-test a narrative, or move a fuzzy strategy doc into something concrete.
+
+## Skills
+
+### GTM
+
+- [**bold-claim**](./skills/gtm/bold-claim/SKILL.md) — Find the single contested sentence that drives a product's GTM motion. Researches the competitive landscape, generates 5–7 claim candidates across six archetypes, scores them against a 25-point sharpness rubric, and produces a messaging doc anchored on the winning claim.
+
+More skills coming. The repo is set up to grow.
 
 ## Install
 
-### Claude Code
+### As a Claude Code plugin (all skills)
+
+Clone the repo into your Claude Code plugins directory:
 
 ```bash
-git clone https://github.com/brainsparker/Bold-Claim.git ~/.claude/skills/bold-claim
+git clone https://github.com/brainsparker/skills.git ~/.claude/plugins/brainsparker-skills
 ```
 
-Or, for a single project:
+Claude Code reads [`.claude-plugin/plugin.json`](./.claude-plugin/plugin.json) and registers every skill listed there on next launch.
+
+### A single skill, globally
+
+```bash
+git clone https://github.com/brainsparker/skills.git /tmp/brainsparker-skills
+cp -R /tmp/brainsparker-skills/skills/gtm/bold-claim ~/.claude/skills/
+```
+
+### A single skill, project-scoped
 
 ```bash
 mkdir -p .claude/skills/bold-claim
 curl -o .claude/skills/bold-claim/SKILL.md \
-  https://raw.githubusercontent.com/brainsparker/Bold-Claim/main/SKILL.md
+  https://raw.githubusercontent.com/brainsparker/skills/main/skills/gtm/bold-claim/SKILL.md
 ```
-
-Claude Code picks up the skill on next launch.
 
 ### Claude.ai
 
-Upload `SKILL.md` to a Project. The skill activates whenever the conversation matches the trigger phrases in the frontmatter.
+Upload the relevant `SKILL.md` to a Project. The skill activates whenever the conversation matches the trigger phrases in its frontmatter.
 
-## Use it
+## Repo layout
 
-Trigger phrases:
+```
+.claude-plugin/
+  plugin.json          # registers every skill in this repo
+skills/
+  gtm/
+    bold-claim/
+      SKILL.md
+```
 
-- "What's the bold claim for [product]?"
-- "Find the bold claim in this PRD"
-- "Help me position [feature]"
-- "What's the one sentence that defines this?"
-
-Or paste a PRD, strategy doc, or project brief and ask how to pitch it.
-
-## What you get back
-
-1. A short internal read of the product (who, what changes, why now)
-2. 4–8 web searches across competitors, adjacent claims, and contested terrain
-3. 5–7 candidate claims scored on contestability, specificity, falsifiability, behavior change, and memorability
-4. Top 3 surfaced for your pick
-5. A messaging doc with: the claim, the antagonist, three proof points, why-now, behavior shift, surfaces it must win on, and 3–5 one-liner variants
-
-## Full spec
-
-See [`SKILL.md`](./SKILL.md).
+Each skill lives in its own folder under a category. Categories are loose — `gtm` today, more as they emerge.
 
 ## License
 
