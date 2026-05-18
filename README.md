@@ -1,16 +1,16 @@
-# Skills
+# GTM Skills for Product Builders
 
-A collection of [Claude](https://claude.com/claude-code) skills for go-to-market, positioning, and messaging work.
+[Claude](https://claude.com/claude-code) skills for the positioning, messaging, and narrative work that founders, PMs, and product engineers can't outsource.
 
-Each skill is a focused, composable unit. Use them when you need to sharpen a claim, pressure-test a narrative, or move a fuzzy strategy doc into something concrete.
+You shipped the product. Now you need a sentence that makes a stranger care, a launch post that doesn't sound like every other launch post, and a homepage that takes a stance. These skills help with that part — the part that doesn't get easier just because the code works.
+
+Each skill is small, opinionated, and composable. Run them from Claude Code, Claude.ai, or any agent that reads `SKILL.md`.
 
 ## Skills
 
-### GTM
-
 - [**bold-claim**](./skills/gtm/bold-claim/SKILL.md) — Find the single contested sentence that drives a product's GTM motion. Researches the competitive landscape, generates 5–7 claim candidates across six archetypes, scores them against a 25-point sharpness rubric, and produces a messaging doc anchored on the winning claim.
 
-More skills coming. The repo is set up to grow.
+More on the way — launch narratives, customer-research synthesis, pricing positioning, founder one-liners. If there's a specific GTM job you want a skill for, open an issue.
 
 ## Install
 
@@ -54,7 +54,7 @@ skills/
       SKILL.md
 ```
 
-Each skill lives in its own folder under a category. Categories are loose — `gtm` today, more as they emerge.
+Each skill lives in its own folder under a GTM sub-category. Sub-categories will grow as the collection does.
 
 ## License
 
