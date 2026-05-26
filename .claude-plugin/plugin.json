@@ -1,6 +1,7 @@
 {
   "name": "brainsparker-skills",
   "skills": [
-    "./skills/gtm/bold-claim"
+    "./skills/bold-claim",
+    "./skills/quickstart"
   ]
 }

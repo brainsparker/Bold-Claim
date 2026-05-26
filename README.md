@@ -1,16 +1,17 @@
-# GTM Skills for Product Builders
+# How I Build
 
-[Claude](https://claude.com/claude-code) skills for the positioning, messaging, and narrative work that founders, PMs, and product engineers can't outsource.
+*PM Skills for 2026*
 
-You shipped the product. Now you need a sentence that makes a stranger care, a launch post that doesn't sound like every other launch post, and a homepage that takes a stance. These skills help with that part — the part that doesn't get easier just because the code works.
+Product management in 2026 isn't strategy *or* build — it's both, in the same head, on the same day. Positioning, marketing, messaging, pricing, packaging on one side. Writing code, reviewing code, scaffolding new repos, understanding the market on the other. The job is to create value, not to ship blindly.
 
-Each skill is small, opinionated, and composable. Run them from Claude Code, Claude.ai, or any agent that reads `SKILL.md`.
+This repo is the collection of [Claude](https://claude.com/claude-code) skills I use to do that work. Each one is small, opinionated, and composable — you can run them from Claude Code, Claude.ai, or any agent that reads `SKILL.md`. Take them, fork them, see how I work.
 
 ## Skills
 
-- [**bold-claim**](./skills/gtm/bold-claim/SKILL.md) — Find the single contested sentence that drives a product's GTM motion. Researches the competitive landscape, generates 5–7 claim candidates across six archetypes, scores them against a 25-point sharpness rubric, and produces a messaging doc anchored on the winning claim.
+- [**bold-claim**](./skills/bold-claim/SKILL.md) *(positioning)* — Find the single contested sentence that drives a product's GTM motion. Researches the competitive landscape, generates 5–7 claim candidates across six archetypes, scores them against a 25-point sharpness rubric, and produces a messaging doc anchored on the winning claim.
+- [**quickstart**](./skills/quickstart/SKILL.md) *(development)* — Scaffold a new CLI tool or script with my conventions. Interviews you for language and purpose, then sets up the directory, writes the starter files, lands the first commit. For the cases `create-*-app` doesn't cover.
 
-More on the way — launch narratives, customer-research synthesis, pricing positioning, founder one-liners. If there's a specific GTM job you want a skill for, open an issue.
+More on the way — launch narratives, pricing positioning, customer-research synthesis, founder one-liners on the strategy side; code review, repo hygiene, and market-mapping skills on the build side. If there's a specific PM job you want a skill for, open an issue.
 
 ## Install
 
@@ -28,7 +29,7 @@ Claude Code reads [`.claude-plugin/plugin.json`](./.claude-plugin/plugin.json) a
 
 ```bash
 git clone https://github.com/brainsparker/skills.git /tmp/brainsparker-skills
-cp -R /tmp/brainsparker-skills/skills/gtm/bold-claim ~/.claude/skills/
+cp -R /tmp/brainsparker-skills/skills/bold-claim ~/.claude/skills/
 ```
 
 ### A single skill, project-scoped
@@ -36,7 +37,7 @@ cp -R /tmp/brainsparker-skills/skills/gtm/bold-claim ~/.claude/skills/
 ```bash
 mkdir -p .claude/skills/bold-claim
 curl -o .claude/skills/bold-claim/SKILL.md \
-  https://raw.githubusercontent.com/brainsparker/skills/main/skills/gtm/bold-claim/SKILL.md
+  https://raw.githubusercontent.com/brainsparker/skills/main/skills/bold-claim/SKILL.md
 ```
 
 ### Claude.ai
@@ -49,12 +50,13 @@ Upload the relevant `SKILL.md` to a Project. The skill activates whenever the co
 .claude-plugin/
   plugin.json          # registers every skill in this repo
 skills/
-  gtm/
-    bold-claim/
-      SKILL.md
+  bold-claim/
+    SKILL.md
+  quickstart/
+    SKILL.md
 ```
 
-Each skill lives in its own folder under a GTM sub-category. Sub-categories will grow as the collection does.
+Each skill lives in its own folder under `skills/`.
 
 ## License
 
