@@ -9,9 +9,10 @@ This repo is the collection of [Claude](https://claude.com/claude-code) skills I
 ## Skills
 
 - [**bold-claim**](./skills/bold-claim/SKILL.md) *(positioning)* — Find the single contested sentence that drives a product's GTM motion. Researches the competitive landscape, generates 5–7 claim candidates across six archetypes, scores them against a 25-point sharpness rubric, and produces a messaging doc anchored on the winning claim.
+- [**claim-review**](./skills/claim-review/SKILL.md) *(review)* — PM-lens code review. Scores a PR against the asserted claim across five dimensions (claim-aligned, surface-honest, felt-value, scope-honest, voice-aligned) and names the concrete gaps between what was promised and what the code ships. Composes with bold-claim.
 - [**quickstart**](./skills/quickstart/SKILL.md) *(development)* — Scaffold a new CLI tool or script with my conventions. Interviews you for language and purpose, then sets up the directory, writes the starter files, lands the first commit. For the cases `create-*-app` doesn't cover.
 
-More on the way — launch narratives, pricing positioning, customer-research synthesis, founder one-liners on the strategy side; code review, repo hygiene, and market-mapping skills on the build side. If there's a specific PM job you want a skill for, open an issue.
+More on the way — launch narratives, pricing positioning, customer-research synthesis, founder one-liners on the strategy side; repo hygiene and market-mapping skills on the build side. If there's a specific PM job you want a skill for, open an issue.
 
 ## Install
 
