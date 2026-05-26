@@ -53,6 +53,8 @@ Upload the relevant `SKILL.md` to a Project. The skill activates whenever the co
 skills/
   bold-claim/
     SKILL.md
+  claim-review/
+    SKILL.md
   quickstart/
     SKILL.md
 ```
